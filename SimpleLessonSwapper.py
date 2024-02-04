@@ -213,8 +213,8 @@ if st.button("Click me to see who is free!"):
                 exp += 1
     for teach in teachers_list:
         x = availableper(teach)
-        if sublist(lesson_period, x[day.split()[1]]):
-            if teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
+        if teach in teacherdb.keys() and sublist(lesson_period, x[day.split()[1]]):
+            if class_toswap in teacherdb[teach]:
                 teachers_class_free.append(teach)
             else:
                 teachers_free.append(teach)
@@ -228,6 +228,7 @@ if st.button("Click me to see who is free!"):
 st.write("Teachers who are available during your lesson and teach the class:")
 st.write(teachers_class_free)
 
-if st.button("I may need a multi-way swap..."):
-    st.write("Teachers who are available during your lesson but DO NOT teach the class :")
-    st.write(teachers_free)
+st.write("Teachers who are available during your lesson but DO NOT teach the class:")
+st.write(teachers_free)
+st.write("Other teachers who teach your class:")
+st.write(teachers_free)
