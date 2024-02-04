@@ -183,6 +183,7 @@ lesson_period_end = [key for key in timings.keys() if timings[key][1] == lesson_
 teacherdb = open_class_db('TeacherList')
 teachers_free = []
 teachers_class_free = []
+other_teachers = []
 
 if st.button("Click me to see who is free!"):
     if lesson_period_end > lesson_period_start: 
