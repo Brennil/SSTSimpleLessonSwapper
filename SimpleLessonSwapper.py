@@ -227,8 +227,9 @@ if st.button("Click me to see who is free!"):
 
 st.write("Teachers who are available during your lesson and teach the class:")
 st.write(teachers_class_free)
-
+'''
 st.write("Teachers who are available during your lesson but DO NOT teach the class:")
 st.write(teachers_free)
 st.write("Other teachers who teach your class:")
 st.write(teachers_free)
+'''
