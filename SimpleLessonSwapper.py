@@ -229,5 +229,5 @@ st.write("Teachers who are available duriing your lesson and teach the class:")
 st.write(teachers_class_free)
 
 if st.button("I may need a multi-way swap..."):
-    st.write("Teachers who are available duriing your lesson but DO NOT teach the class :")
+    st.write("Teachers who are available during your lesson but DO NOT teach the class :")
     st.write(teachers_free)
