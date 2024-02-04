@@ -132,7 +132,7 @@ def table_display(lst):
     # CSS to inject contained in a string
     hide_table_row_index = """
             <style>
-            thead th {opacity: 0}
+            thead th {display:none}
             thead tr th:first-child {display:none}
             tbody th {display:none}
             </style>
