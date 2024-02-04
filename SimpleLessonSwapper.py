@@ -58,6 +58,11 @@ def availableper(teacher):
                 teachfree[day].append(per)
     return teachfree
 
+def sublist(lst1, lst2):
+    ls1 = [element for element in lst1 if element in lst2]
+    ls2 = [element for element in lst2 if element in lst1]
+    return ls1 == ls2
+    
 timings = {
         1: ['8:00', '8:20'],
         2: ['8:20', '8:40'],
@@ -178,7 +183,7 @@ lesson_start = st.selectbox("Select the lesson start time...", time_list)
 lesson_end = st.selectbox("Select the lesson end time...", time_list)
 lesson_period_start = [key for key in timings.keys() if timings[key][0] == lesson_start]
 lesson_period_end = [key for key in timings.keys() if timings[key][1] == lesson_end]
-
+print(type(class_toswap)
 
 teacherdb = open_class_db('TeacherList')
 teachers_free = []
@@ -186,11 +191,11 @@ teachers_class_free = []
 other_teachers = []
 
 if st.button("Click me to see who is free!"):
-    if lesson_period_end > lesson_period_start: 
-        lesson_period = lesson_period_start + lesson_period_end
-        while lesson_period[0] + 1 != lesson_period[1]:
-            lesson_period.insert(1, lesson_period[1] - 1)
-    else: st.write("Error! Please ensure that your lesson end time is after your lesson start time!")
+    while lesson_period_end <= lesson_period_start: 
+        st.write("Error! Please ensure that your lesson end time is after your lesson start time!")
+    lesson_period = lesson_period_start + lesson_period_end
+    while lesson_period[0] + 1 != lesson_period[1]:
+        lesson_period.insert(1, lesson_period[1] - 1)
     exp = 0
     while True:
         try:
@@ -208,8 +213,7 @@ if st.button("Click me to see who is free!"):
                 exp += 1
     for teach in teachers_list:
         x = availableper(teach)
-        st.write(teach, x[day.split()[1]])
-        if lesson_period in x[day.split()[1]]:
+        if sublist(lesson_period, x[day.split()[1]]):
             if class_toswap in teacherdb[teach]:
                 teachers_class_free.append(teach)
             else:
