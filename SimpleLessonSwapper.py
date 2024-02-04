@@ -138,7 +138,7 @@ def table_display(lst):
     
     # Inject CSS with Markdown
     #st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    st.markdown(df2.style.set_properties(**{'font-size':'14px'}.hide(axis = 0).hide(axis = 1).to_html(), unsafe_allow_html = True)
+    st.markdown(df2.style.set_properties(**{'font-size':'14px'}.hide(axis = 0).hide(axis = 1).to_html(), unsafe_allow_html = True))
 
     # Display a static table
     st.table(df2)
