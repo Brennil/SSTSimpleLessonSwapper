@@ -214,7 +214,6 @@ if st.button("Click me to see who is free!"):
     for teach in teachers_list:
         x = availableper(teach)
         if sublist(lesson_period, x[day.split()[1]]):
-            st.write(teach)
             if teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
                 teachers_class_free.append(teach)
             else:
