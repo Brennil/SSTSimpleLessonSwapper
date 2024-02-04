@@ -178,15 +178,18 @@ lesson_start = st.selectbox("Select the lesson start time...", time_list)
 lesson_end = st.selectbox("Select the lesson end time...", time_list)
 lesson_period_start = [key for key in timings.keys() if timings[key][0] == lesson_start]
 lesson_period_end = [key for key in timings.keys() if timings[key][1] == lesson_end]
-lesson_period = lesson_period_start + lesson_period_end
-while lesson_period[0] + 1 != lesson_period[1]:
-    lesson_period.insert(1, lesson_period[1] - 1)
+
 
 teacherdb = open_class_db('TeacherList')
 teachers_free = []
 teachers_class_free = []
 
 if st.button("Click me to see who is free!"):
+    if lesson_period_end > lesson_period_start: 
+        lesson_period = lesson_period_start + lesson_period_end
+        while lesson_period[0] + 1 != lesson_period[1]:
+            lesson_period.insert(1, lesson_period[1] - 1)
+    else: st.write("Error! Please ensure that your lesson end time is after your lesson start time!")
     exp = 0
     while True:
         try:
