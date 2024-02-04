@@ -206,7 +206,7 @@ if st.button("Click me to see who is free!"):
             if 2**exp > 120: 
                 st.write("Sorry, we are having issues connecting to our database. Please try again later.")
                 st.stop()
-            else:https://github.com/Brennil/SSTSimpleLessonSwapper/blob/main/SimpleLessonSwapper.py
+            else:
                 st.write("Error connecting to database... We will try again in {} seconds...".format(2**exp))
                 waittime = 2**exp + random.random()/100
                 time.sleep(waittime)
