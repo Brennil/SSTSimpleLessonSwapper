@@ -213,7 +213,7 @@ if st.button("Click me to see who is free!"):
                 teachers_class_free.append(teach)
             else:
                 teachers_free.append(teach)
-        elif class_toswap in teacherdb[teach]:
+        elif teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
             other_teachers.append(teach)
 
 '''
