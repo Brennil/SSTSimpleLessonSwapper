@@ -130,24 +130,16 @@ def table_display(lst):
     df2 = df.style
     
     # CSS to inject contained in a string
-    hide_table_row_index = """
+    hide_table_rowcol_index = """
             <style>
             thead th {display:none}
             thead tr th:first-child {display:none}
             tbody th {display:none}
             </style>
             """
-
-    hide_table_col_index = """
-            <style>
-            thead th:first-child {opacity: 0}
-            </style>
-            """
     
     # Inject CSS with Markdown
-    st.markdown(hide_table_row_index, unsafe_allow_html=True)
-    #st.markdown(hide_table_col_index, unsafe_allow_html=True)
-    #st.markdown(df2.style.hide(axis = 1).to_html(), unsafe_allow_html = True)
+    st.markdown(hide_table_rowcol_index, unsafe_allow_html=True)
 
     # Display a static table
     st.table(df2)
@@ -218,7 +210,7 @@ if st.button("Click me to see who is free!"):
     table_display(teachers_class_free)
 
     st.write("Teachers who are available during your lesson but DO NOT teach the class:")
-    st.write(teachers_free)
+    table_display(teachers_free)
     st.write("Other teachers who teach your class:")
-    st.write(other_teachers)
+    table_display(other_teachers)
 
