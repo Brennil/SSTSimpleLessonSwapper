@@ -225,7 +225,7 @@ if st.button("Click me to see who is free!"):
 ### Results
 '''
 
-st.write("Teachers who are available duriing your lesson and teach the class:")
+st.write("Teachers who are available during your lesson and teach the class:")
 st.write(teachers_class_free)
 
 if st.button("I may need a multi-way swap..."):
