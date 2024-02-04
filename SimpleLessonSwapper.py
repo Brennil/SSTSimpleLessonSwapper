@@ -59,9 +59,10 @@ def availableper(teacher):
     return teachfree
 
 def sublist(lst1, lst2):
-    ls1 = [element for element in lst1 if element in lst2]
-    ls2 = [element for element in lst2 if element in lst1]
-    return ls1 == ls2
+    for e in lst1:
+        if e not in lst2:
+            return False
+    return True
     
 timings = {
         1: ['8:00', '8:20'],
