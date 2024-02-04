@@ -183,7 +183,7 @@ lesson_start = st.selectbox("Select the lesson start time...", time_list)
 lesson_end = st.selectbox("Select the lesson end time...", time_list)
 lesson_period_start = [key for key in timings.keys() if timings[key][0] == lesson_start]
 lesson_period_end = [key for key in timings.keys() if timings[key][1] == lesson_end]
-print(type(class_toswap)
+print(type(class_toswap))
 
 teacherdb = open_class_db('TeacherList')
 teachers_free = []
