@@ -97,36 +97,15 @@ timings = {
         30: ['17:40', '18:00'],
         31: ['18:00', '18:20']}
 
-def time_converter(all_avail):
+def table_display(lst):
     cols = []
-    headers = []
-    all_avail_times = {}
-    for key in all_avail.keys():
-        all_avail_times[key] = []
-        for period in all_avail[key]:
-            all_avail_times[key].append(timings[int(period)])
-        i = 0
-        while True:
-            current = all_avail_times[key]
-            while i < len(current)-1 and current[i][1] == current[i+1][0]:
-                current[i][1] = current[i+1][1]
-                current.remove(current[i+1])
-            i += 1
-            if i >= len(current)-1:
-                all_avail_times[key] = current
-                col = []
-                headers.append(key)
-                for time in current:
-                    col.append("{} - {}".format(time[0],time[1]))
-                cols.append(col)
-                break
-
-    longest = max([len(x) for x in cols])
-    for col in cols:
-        while len(col) < longest:
-            col.append("")
+    length = int(len(lst)/2 + 0.5)
+    col1 = lst[:length]
+    col2 = lst[length:]
+    if length%2 == 1: col2.append("")
+    cols = [col1, col2
         
-    df = pd.DataFrame(zip(*cols), columns = headers)
+    df = pd.DataFrame(zip(*cols), columns = None)
     
     # style
     th_props = [
@@ -226,7 +205,7 @@ if st.button("Click me to see who is free!"):
 '''
 
 st.write("Teachers who are available during your lesson and teach the class:")
-st.write(teachers_class_free)
+table_display(teachers_class_free)
 
 st.write("Teachers who are available during your lesson but DO NOT teach the class:")
 st.write(teachers_free)
