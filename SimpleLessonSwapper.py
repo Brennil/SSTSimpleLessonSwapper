@@ -112,8 +112,8 @@ def table_display(lst):
     ('font-size', '14px'),
     ('text-align', 'center'),
     ('font-weight', 'bold'),
-    ('color', '#6d6d6d'),
-    ('background-color', '#f7ffff')
+    ('color', '#ffffff'),
+    ('background-color', '#ffffff')
     ]
                                
     td_props = [
