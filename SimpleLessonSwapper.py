@@ -211,16 +211,16 @@ if st.button("Click me to see who is free!"):
                 waittime = 2**exp + random.random()/100
                 time.sleep(waittime)
                 exp += 1
-    st.write(availableper('Jasvindar Pal Kaur D/O Mukhtiar Singh'))
     for teach in teachers_list:
-        x = availableper(teach)
-        if sublist(lesson_period, x[day.split()[1]]):
-            if teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
-                teachers_class_free.append(teach)
-            else:
-                teachers_free.append(teach)
-        elif teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
-            other_teachers.append(teach)
+        if teach in availableper.keys():
+            x = availableper(teach)
+            if sublist(lesson_period, x[day.split()[1]]):
+                if teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
+                    teachers_class_free.append(teach)
+                else:
+                    teachers_free.append(teach)
+            elif teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
+                other_teachers.append(teach)
 
 '''
 ### Results
