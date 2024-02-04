@@ -139,7 +139,7 @@ def table_display(lst):
 
     hide_table_col_index = """
             <style>
-            thead th: {display:none}
+            thead th:first-child {display:none}
             </style>
             """
     
