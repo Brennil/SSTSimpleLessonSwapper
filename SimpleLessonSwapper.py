@@ -137,7 +137,7 @@ def table_display(lst):
             """
     
     # Inject CSS with Markdown
-    st.markdown(hide_table_row_index, unsafe_allow_html=True)
+    st.markdown(hide_table_row_index.hide(axis = 1), unsafe_allow_html=True)
 
     # Display a static table
     st.table(df2)
