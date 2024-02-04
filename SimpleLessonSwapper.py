@@ -209,6 +209,8 @@ if st.button("Click me to see who is free!"):
                 teachers_class_free.append(teach)
             else:
                 teachers_free.append(teach)
+        elif class_toswap in teacherdb[teach]:
+            other_teachers.append(teach)
 
 '''
 ### Results
@@ -216,5 +218,7 @@ if st.button("Click me to see who is free!"):
 
 st.write("Teachers who are available duriing your lesson and teach the class:")
 st.write(teachers_class_free)
-st.write("Teachers who are available duriing your lesson but DO NOT teach the class (to consider 3-way swaps:")
-st.write(teachers_free)
+
+if st.button("I may need a multi-way swap..."):
+    st.write("Teachers who are available duriing your lesson but DO NOT teach the class :")
+    st.write(teachers_free)
