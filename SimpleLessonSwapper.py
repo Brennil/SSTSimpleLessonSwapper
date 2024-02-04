@@ -183,7 +183,6 @@ lesson_start = st.selectbox("Select the lesson start time...", time_list)
 lesson_end = st.selectbox("Select the lesson end time...", time_list)
 lesson_period_start = [key for key in timings.keys() if timings[key][0] == lesson_start]
 lesson_period_end = [key for key in timings.keys() if timings[key][1] == lesson_end]
-print(type(class_toswap))
 
 teacherdb = open_class_db('TeacherList')
 teachers_free = []
@@ -213,8 +212,8 @@ if st.button("Click me to see who is free!"):
                 exp += 1
     for teach in teachers_list:
         x = availableper(teach)
-        print(day, lesson_period)
         if sublist(lesson_period, x[day.split()[1]]):
+            print(teach)
             if teach in teacherdb.keys() and class_toswap in teacherdb[teach]:
                 teachers_class_free.append(teach)
             else:
