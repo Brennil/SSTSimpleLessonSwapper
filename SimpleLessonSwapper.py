@@ -103,7 +103,7 @@ def table_display(lst):
     col1 = lst[:length]
     col2 = lst[length:]
     if length%2 == 1: col2.append("")
-    cols = [col1, col2
+    cols = [col1, col2]
         
     df = pd.DataFrame(zip(*cols), columns = None)
     
