@@ -19,7 +19,7 @@ db = dict()
 
 def open_db(filename):
     spread = gc.open(filename)
-    worksheet = spread.worksheet("2024T1") #CHANGE THIS WHEN CHANGING TERM DATABASES!!!
+    worksheet = spread.worksheet("2024T3-4") #CHANGE THIS WHEN CHANGING TERM DATABASES!!!
     csvdb = worksheet.get_all_values()
     
     db['Monday'] = defaultdict()
